@@ -1,0 +1,57 @@
+GET http://localhost:5000/employees
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBJZCI6MSwiZW1wTmFtZSI6ImFkbWluIiwiaWF0IjoxNjg1NTk3NDY0LCJleHAiOjE2ODU1OTc0ODR9.ZObsoqcsXYnrijl5RdbdbL8x98JuypJN0KN9_nDBMDc
+
+###
+GET http://localhost:5000/employees/1
+
+###
+POST http://localhost:5000/employees
+Content-Type: application/json
+
+{
+    "name": "admin",
+    "email": "admin@gmail.com",
+    "posisi": "Admin",
+    "password": "admin",
+    "is_admin": false
+    
+}
+
+###
+PATCH http://localhost:5000/employees/2
+Content-Type: application/json
+
+{
+    "name": "Grivia Trifosa",
+    "email": "grivia@gmail.com",
+    "posisi": "Full Stack Developer"
+}
+
+###
+DELETE http://localhost:5000/employees/1
+
+###
+POST http://localhost:5000/employees/absen/5
+Content-Type: application/json
+
+{
+    "attendance_date": "2001-01-01 20:01:00.000000"
+}
+
+###
+GET http://localhost:5000/absensi/view/5
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "admin"
+}
+
+###
+GET http://localhost:5000/token
+
+###
+DELETE http://localhost:5000/logout
