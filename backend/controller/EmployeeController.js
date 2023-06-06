@@ -82,6 +82,18 @@ export const loginUser = async(req, res) => {
                     const isAdmin = response.is_admin;
                     const accessToken = jwt.sign({empId, empName, isAdmin}, process.env.ACCESS_TOKEN_SECRET)
 
+                    if(isAdmin === 0) {
+                        const empAbsen = await Attendance.findOne({
+                            where: {
+                                employeeId: response.id
+                            },
+                            order: [ [ 'attendance_date', 'DESC' ]],
+                        });
+                
+                        const lastAttend = new Date(empAbsen.attendance_date).toISOString().slice(0, 10);
+                        res.status(200).json({lastAttend, empName, empId, accessToken, is_admin: response.is_admin});
+                    }
+
                     res.status(200).json({empName, empId, accessToken, is_admin: response.is_admin});
                 } else {
                     res.status(401).json({ message: "Invalid Credentials" });
@@ -134,7 +146,7 @@ export const addAttendance = async(req, res) => {
             // console.log(req.body);
             await Attendance.create({
                 attendance_date: req.body.attendance_date,
-                attendance_image: req.body.imageURL,
+                attendance_image: req.body.url,
                 employeeId: req.params.id
             });
             res.status(200).json(response);

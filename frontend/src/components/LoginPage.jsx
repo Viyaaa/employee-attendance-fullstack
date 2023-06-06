@@ -27,6 +27,7 @@ const LoginPage = () => {
             if(response.data.is_admin === 1){
                 navigate("/admin/home");
             } else if(response.data.is_admin === 0) {
+                localStorage.setItem("empAttend", response.data.lastAttend);
                 navigate("/employee/absen");
             }
         } catch (error) {

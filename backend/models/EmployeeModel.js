@@ -54,7 +54,9 @@ const Attendance = db.define('attendances', {
 })
 
 // Define the association between Employee List and Employee Attendance
-Employee.hasMany(Attendance);
+Employee.hasMany(Attendance, {
+    onDelete: 'CASCADE'
+});
 Attendance.belongsTo(Employee);
 
 export { Employee, Attendance };
