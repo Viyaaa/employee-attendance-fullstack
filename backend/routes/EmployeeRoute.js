@@ -1,7 +1,7 @@
 import express from "express";
 const router = express.Router();
 import { getUsers, getUserById, createUser, updateUser, deleteUser, loginUser, addAttendance, viewAttendance, logoutUser } from "../controller/EmployeeController.js";
-import { verifyAdmin } from "../middleware/VerifyToken.js";
+import { verifyAdmin } from "../middleware/VerifyAdmin.js";
 
 router.get('/employees', verifyAdmin, getUsers);
 router.get('/employees/:id' ,getUserById);

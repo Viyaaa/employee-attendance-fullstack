@@ -42,7 +42,7 @@ const EditEmployee = () => {
             <div className="m-5 flex justify-center">
             <form onSubmit={updateEmployee}>
                 <div className="mb-6">
-                    <label for="empName" className="block mb-2 text-sm font-medium text-gray-900 ">Employee Name</label>
+                    <label htmlFor="empName" className="block mb-2 text-sm font-medium text-gray-900 ">Employee Name</label>
                     <input 
                         type="text" 
                         id="empName" 
@@ -53,7 +53,7 @@ const EditEmployee = () => {
                         required/>
                 </div>
                 <div className="mb-6">
-                    <label for="empEmail" className="block mb-2 text-sm font-medium text-gray-900 ">Email</label>
+                    <label htmlFor="empEmail" className="block mb-2 text-sm font-medium text-gray-900 ">Email</label>
                     <input 
                         type="email" 
                         id="empEmail" 
@@ -63,7 +63,7 @@ const EditEmployee = () => {
                         required/>
                 </div>
                 <div className="mb-6">
-                    <label for="empPosition" className="block mb-2 text-sm font-medium text-gray-900 ">Position</label>
+                    <label htmlFor="empPosition" className="block mb-2 text-sm font-medium text-gray-900 ">Position</label>
                     <input 
                         type="text" 
                         id="empPosition" 

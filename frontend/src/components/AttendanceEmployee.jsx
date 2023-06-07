@@ -100,7 +100,7 @@ const AttendanceEmployee = () => {
                         disabled readOnly />
                 </div>
                 <div className="mb-6">
-                    <label className="block mb-2 text-sm font-medium" for="image">Upload Photo</label>
+                    <label className="block mb-2 text-sm font-medium" htmlFor="image">Upload Photo</label>
                     <input 
                         type="file"
                         accept="image/*"
